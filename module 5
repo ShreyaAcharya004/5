@@ -1,0 +1,78 @@
+Q1) Why Django should be used for web-development? Explain how you can create a project in Django?
+Ans) Django is a high-level Python web framework that enables rapid development of secure and maintainable websites.
+Steps for creating a project in Django :-
+Step 1) pip install django
+
+Step 2) django-admin startproject projectname
+
+Step 3) python manage.py runserver
+
+Step 4) python manage.py startapp appname
+
+Step 5) python manage.py makemigrations
+
+Step 6) python manage.py migrate
+
+
+Q3) Explain what does django-admin.py make messages command is used for?
+
+Ans) The make_messages command scans your Django project for text strings marked for translation in your code and creates or updates message files for
+different languages. 
+These message files contain the original text strings and placeholders, and they serve as templates for translators to provide translations.
+
+The make_messages command in Django is a management utility that automates the creation of translation files. It searches through the codebase for
+instances of the {% trans %} template tag and generates a message file for each specified language. These files are then used to provide translations of 
+the marked strings.
+
+
+
+
+
+
+
+
+
+
+
+Q5) What is a QuerySet ? Write program to create a new Post object in database.
+
+Ans) QuerySet: QuerySet is a collection of database queries that can be used to retrieve data from a database. It's a high-level API provided by Django 
+for interacting with databases.
+
+Models.py:
+from django.db import models
+
+class User(models.Model):
+	fname=models.CharField(max_length=100)
+	lname=models.CharField(max_length=100)
+	email=models.EmailField()
+	mobile=models.PositiveIntegerField()
+	address=models.TextField()
+	password=models.CharField(max_length=100)
+	profile_picture=models.ImageField(upload_to="profile_picture/",default="")
+	usertype=models.CharField(max_length=100,default="user")
+
+	def __str__(self):
+		return self.fname+" "+self.lname
+
+
+
+
+
+Q2) How to check installed version of django?
+Ans) By Using " django-admin.py --version " user can check the version installed in the system.
+
+
+
+Q6) Mention what command line can be used to load data into Django?
+
+Ans) To load data into Django you have to use the command line Django-admin.py loaddata. The command line will searches the data and loads the contents
+of the named fixtures into the database.
+
+Typically, you use the dumpdata command to export data from a database and use the loaddata command to import data from the file into the same or another
+database.
+
+
+Q7) Explain what does django-admin.py make messages command is used for?
+
+Ans) Same Answer as Answer no.3 
